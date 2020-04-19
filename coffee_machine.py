@@ -7,13 +7,14 @@ money = 550
 
 def buy():
     def coffee_maker(water_, milk_, coffee_, money_):
+        global water, milk, coffee_beans, disp_cups, money
         if water_ <= water and milk_ <= milk and coffee_beans <= coffee_beans:
             print('I have enough resources, making you a coffee!\n')
-            globals()['water'] -= water_
-            globals()['milk'] -= milk_
-            globals()['coffee_beans'] -= coffee_
-            globals()['disp_cups'] -= 1
-            globals()['money'] += money_
+            water -= water_
+            milk -= milk_
+            coffee_beans -= coffee_
+            disp_cups -= 1
+            money += money_
         else:
             if water_ > water:
                 print('Sorry, not enough water!\n')
@@ -35,10 +36,11 @@ def buy():
 
 
 def fill():
-    globals()['water'] += int(input('\nWrite how many ml of water do you want to add:\n'))
-    globals()['milk'] += int(input('Write how many ml of milk do you want to add:\n'))
-    globals()['coffee_beans'] += int(input('Write how many grams of coffee beans do you want to add:\n'))
-    globals()['disp_cups'] += int(input('Write how many disposable cups do you want to add:\n'))
+    global water, milk, coffee_beans, disp_cups, money
+    water += int(input('\nWrite how many ml of water do you want to add:\n'))
+    milk += int(input('Write how many ml of milk do you want to add:\n'))
+    coffee_beans += int(input('Write how many grams of coffee beans do you want to add:\n'))
+    disp_cups += int(input('Write how many disposable cups do you want to add:\n'))
     print('')
 
 
